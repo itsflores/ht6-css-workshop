@@ -9,6 +9,7 @@
 - All things frontend
 - [omarg247](https://github.com/omarg247) on GitHub
 - [omarflores.dev](https://omarflores.dev) on the web
+- [omarflores.dev/favorites](https://omarflores.dev/favorites) for resources that have helped me!
 
 ### Jason Le
 
