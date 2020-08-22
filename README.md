@@ -24,13 +24,27 @@ According to MDN web docs (Mozilla Developer Network):
 
 > **TL;DR** a way to style documents, most commonly HTML and SVG
 
+## CSS seems scary
+**Queue the horror music**
+- "I hate CSS" 
+- "I can't center this div!"
+- "I can't do CSS for my life"
+- "WhAT iS CSs"
+
+**Why does this happen?**
+- Lack of true resources
+- A lot of detailing
+- If things aren't built properly from the beginning, you'll end up using `!important` EVERYWHERE
+
 ## Essentials 
 
-- selectors
-- box model
-- layouts
-- pseudo classes
-- transitions
+- [x] selectors
+- [x] pseudo classes
+- [x] box model
+- [x] sizing units
+- [ ] position
+- [ ] layouts
+- [ ] transitions
 
 ## Selectors
 
@@ -75,6 +89,7 @@ According to MDN web docs (Mozilla Developer Network):
 ### Syntax
 - space -> another level in
 - no space -> same element 
+- comma -> different element
 
 ```html
   <div class="profile-container">
@@ -120,9 +135,6 @@ According to MDN web docs (Mozilla Developer Network):
     }
   }
   ```
-  
-**What NOT to do**
-- Use a ompletely different class for each element
 
 **Pseudo classes**
 - `:hover`
@@ -146,8 +158,80 @@ According to MDN web docs (Mozilla Developer Network):
 
 <img src="./img/box-model.bmp" style="height: 264px; padding: 32px" />
 
-**height & width**
+- height & width can be either relative or static
+- padding goes inwards <<
+- margin goes outwards >>
+
+## Sizing units
+
+**%**
+- Size relative to to parent element
+- Usually used when parent components have a set height/width
+
+**px**
+- Pixels
+- Usually the standard for all units
+
+**rem "root element font size"**
+- Size scalable to what the "root element of font size is"
+- Usually set as 16px
+- `em` stands for element font size, nearest font size is used
+
+**vh, vw**
+- Size relative to viewport
+- Usually used in parent body, html, or main components
+
+**Static one pager website**
+```html
+  <body>
+    <div class="main-container">
+      <div class="profile-container">
+        <img>
+      </div>
+    </div>
+  </body>
+```
+
+```css
+  html, body {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .main-container {
+    padding: 1rem;
+    height: 264px;
+    width: 264px;
+    display: flex;
+  }
+
+  .profile-container {
+    margin: auto;
+    padding: 1rem;
+    
+  }
+
+  .profile-image {
+    height: 100%;
+    width: 100%;
+  }
+```
+
+## Position
+
+**static**
+- The normal position
+
+**relative**
+- Used to be able to use absolute in the children
+
+**absolute**
+- Relative to the closest parent component that has `position: relative` on it.
+
+**fixed**
 - 
+
+**-webkit-sticky**
 
 ## Flavours of CSS
 
